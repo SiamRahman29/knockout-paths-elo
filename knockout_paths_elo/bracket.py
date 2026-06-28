@@ -30,7 +30,9 @@ ProbFn = Callable[[float, float], float]
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 ELO_CSV = DATA_DIR / "elo_ratings.csv"
 
-ROUND_NAMES = {32: "R32", 16: "R16", 8: "QF", 4: "SF", 2: "Final"}
+# Keyed by the number of leaves below a match node, i.e. teams entering that
+# subtree: a first-round (R32) match has 2 leaves, the final has all 32.
+ROUND_NAMES = {2: "R32", 4: "R16", 8: "QF", 16: "SF", 32: "Final"}
 
 
 # --------------------------------------------------------------------------- #
